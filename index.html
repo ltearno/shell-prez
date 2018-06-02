@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Shell Prez demo</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="./css/index.css" />
+    <link rel="stylesheet" href="./css/xterm.css" />
+    <link rel="stylesheet" href="./css/xterm_customize.css" />
+
+    <script src="dist/shell-prez-bundle.js"></script>
+</head>
+
+<body>
+    <div id="title"></div>
+    <div id="command"></div>
+    <div id="terminal"></div>
+
+    <div id="status">
+        <label>URL
+            <input id="connectUrl" type="text" placeholder="http://193.24.22.55">
+        </label>
+        <label>Connect interval
+            <input id="connectInterval" type="text" value="500">
+        </label>
+        <label>History size
+            <input id="historySize" type="text" value="200">
+        </label>
+        <label>Concurrency
+            <input id="concurrency" type="text" value="1">
+        </label>
+        <div id="state"></div>
+    </div>
+
+    <div id="conclusion"></div>
+    <div id="buttonBar">
+        <button id="runCommand">Run command</button>
+        <button id="previous">Previous</button>
+        <button id="next">Next</button>
+    </div>
+
+    <script>
+        /**
+         * This is the presentation main configuration and slides data
+         */
+        const shellPrez = {
+            // gotty's websocket url
+            gottyWsUrl: `ws://localhost:8080/ws`,
+
+            // presentation steps
+            steps: [
+                {
+                    title: `Welcome to Shell Prez !`,
+                    command: `pwd`,
+                    conclusion: `By clicking on the command, it will be appended in the terminal. You can also play with the buttons just below. When the terminal is not focused, 'r' runs the current command, 'p' goes to the previous slide and 'n' goes next.`
+                },
+                {
+                    title: `Yeah, you get it !`,
+                    command: `ls -la`,
+                    conclusion: `You can now make your own prez by forking this repo and adding your steps / code ! Enjoy !`
+                }
+            ]
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,82 @@
+body {
+    top:0;left:0;right:0;bottom:0;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: stretch;
+    font-family: sans-serif;
+    height: 100%;
+    width: 100%;
+    background-color: #fffbed;
+}
+
+#title {
+    margin: .4em;
+    font-size: 3em;
+    font-weight: bold;
+}
+
+#terminal {
+    flex-grow: 0 0 100vw/50vh;
+    background: black;
+    height: 50vh;
+    width: 100%;
+    box-shadow: 3px 3px 15px 0px #656565;
+    margin-right: 0;
+    margin-left: 0;
+}
+
+#command {
+    font-family: monospace;
+    font-size: 2.5em;
+    margin: .2em;
+    margin-bottom: 1em;
+    text-align: center;
+}
+
+#conclusion {
+    font-size: 2em;
+    margin: 1em;
+    flex-grow: 1;
+    text-align: center;
+}
+
+#command:hover {
+    background-color: lightskyblue;
+    cursor: pointer;
+}
+
+#buttonBar {
+    flex-grow: 0;
+}
+
+.terminal {
+    font-size: .8vw;
+}
+
+#status {
+    flex: 0 0 6em;
+    margin: 1em;
+    padding: .5em;
+    background-color: lightgray;
+}
+
+#status .dashboard-line {
+    width:100%;
+    padding: .1em;
+    overflow: hidden;
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+#status .dashboard-line>div {
+    flex-grow: 0;
+    flex-shrink: 0;
+    margin: .3em;
+}
+
+#status .dashboard-line>div>div {
+    height:1em;
+}
